@@ -6,6 +6,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC, L]
 
 
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^tamuforensics.com [NC,OR]
-RewriteRule ^(.*)$ http://tamuforensics.com/$1 [L,R=301,NC]
+
+RewriteCond %{HTTP_HOST} ^tamuforensics.com [NC]
+RewriteRule ^(.*)$ https://tamuforensics.com/$1 [L,R=301,NC]
