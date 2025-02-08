@@ -1,0 +1,166 @@
+/* Global Styles */
+:root {
+    --primary-color: #500000;
+    --secondary-color: #333;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --white: #fff;
+    --link-hover: #717171;
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Wrapper to keep footer at bottom */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+/* Navigation */
+.nav {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: background 0.3s ease-in-out;
+}
+
+.nav ul li a:hover {
+    background-color: var(--link-hover);
+}
+
+/* Main Content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: var(--white);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1; /* Makes sure the content expands and pushes footer down */
+}
+
+/* Grid Layout for Content */
+.main-content, .sidebar {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.activity {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.activity:last-child {
+    border-bottom: none;
+}
+
+/* Sticky Footer */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Ensures footer stays at the bottom */
+    width: 100%;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1a1a1a;
+        --text-color: #eaeaea;
+        --white: #242424;
+        --secondary-color: #444;
+        --link-hover: #888;
+    }
+
+    .container, .sidebar {
+        background-color: #222;
+        color: #eaeaea;
+    }
+}
+
